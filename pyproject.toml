@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hospitalstar-sdk"
+version = "0.1.0"
+description = "Async Python SDK for HospitalStar report viewing APIs."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Proprietary" }
+authors = [
+  { name = "HospitalStar SDK maintainers" }
+]
+dependencies = [
+  "aiohttp>=3.9,<4",
+  "cryptography>=42,<48",
+  "fastapi>=0.110,<1",
+  "pycryptodome>=3.20,<4",
+  "pydantic>=2.6,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "pytest-asyncio>=0.23,<1",
+  "uvicorn>=0.30,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hospitalstar_sdk"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
