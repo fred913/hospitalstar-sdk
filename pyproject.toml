@@ -14,7 +14,7 @@ authors = [
 ]
 dependencies = [
   "aiohttp>=3.9,<4",
-  "cryptography>=42,<48",
+  "cryptography>=50.0.0,<51",
   "fastapi>=0.110,<1",
   "pycryptodome>=3.20,<4",
   "pydantic>=2.6,<3",
